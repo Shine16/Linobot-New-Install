@@ -42,7 +42,7 @@ reboot
 
 <br />
 
-enter ip address to putty at port 22 for ssh, registry key will be wrong, press OK
+Enter ip address to putty at port 22 for ssh, registry key may give an error, press OK
 
 <br />
 
@@ -72,7 +72,7 @@ To find in wifi list name with KeywordInWifiName with command line
 
 <br />
 
-##### guide to create swap space
+##### Guide to create swap space
 
 https://www.tecmint.com/create-a-linux-swap-file/
 
@@ -90,39 +90,39 @@ create 1.5gb of swap space for ros, 1610612736 from 1.5gb in bytes
 
 <br />
 
-make readable by only root user
+Make readable by only root user
 
 `sudo chmod 600 /mnt/swapfile`
 
 <br />
 
-setup file for swap space
+Setup file for swap space
 
 `sudo mkswap /mnt/swapfile`
 
 <br />
 
-edit /etc/fstab
+Edit /etc/fstab
 
 `sudo nano /etc/fstab`
 
-enable swap file by adding this line in /etc/fstab
+Enable swap file by adding this line in /etc/fstab
 
 `/mnt/swapfile swap swap defaults 0 0`
 
 <br />
 
-edit file to utilize memory
+Edit file to utilize memory
 
 `sudo nano /etc/sysctl.conf`
 
-add following line to utilize swap file in memory
+Add following line to utilize swap file in memory
 
 `vm.swappiness=100`
 
 <br /><br /><br />
 
-commands to check on swap space
+Commands to check on swap space
 
 `swapon -s`
 
@@ -140,31 +140,29 @@ commands to check on swap space
 
 ##### Clone and install methylDragon quick install script
 
-go to home directory, entering command cd ~
-
-type in:
+Go to home directory, entering command cd ~
 
 `git clone https://github.com/methylDragon/quick-install-scripts.git`
 
 <br />
 
-go to directory 
+Go to directory 
 
 `cd ~/quick-install-scripts/Linux`
 
-enable permissions to all files in directory, files will turn green
+Enable permissions to all files in directory, files will turn green
 
 `chmod +x *`
 
-run ros_lino_base_install
+Run ros_lino_base_install
 
 `./ros_lino_base_install`
 
 <br />
 
-options while in install:
+Options while in install:
 
-ok
+ok 			
 
 r
 
@@ -178,7 +176,7 @@ y
 
 <br />
 
-turn off swap file to protect sd card
+Turn off swap file to protect sd card
 
 https://github.com/MrChrisJ/fullnode/issues/20
 
@@ -186,33 +184,33 @@ https://github.com/MrChrisJ/fullnode/issues/20
 
 <br />
 
-turn off swapfile
+Turn off swapfile
 
 `sudo swapoff -a`
 
 <br />
 
-edit file 
+Edit file 
 
 `sudo nano /etc/sysctl.conf`
 
-add # to comment out line
+Add # to comment out line
 
 `#vm.swappiness=100`
 
 <br />
 
-edit /etc/fstab
+Edit /etc/fstab
 
 `sudo nano /etc/fstab`
 
-comment out this line in /etc/fstab
+Comment out this line in /etc/fstab
 
 `#/mnt/swapfile swap swap defaults 0 0`
 
 <br />
 
-remove swapfile
+Remove swapfile
 
 `sudo rm /mnt/swapfile`
 
@@ -262,11 +260,11 @@ On a windows computer, through Putty SSH to rpi
 
 <br />
 
-go home directory
+Go home directory
 
 `cd ~`
 
-create and go to new directory
+Create and go to new directory
 
 `mkdir platformio_test`
 
@@ -274,31 +272,31 @@ create and go to new directory
 
 <br />
 
-initialize platformio
+Initialize platformio
 
 `platformio init --board teensy31`
 
 <br />
 
-lib, platformio.ini and src will be created
+Lib, platformio.ini and src will be created
 
 <br />
 
-go to src directory
+Go to src directory
 
 `cd src`
 
-create main.cpp in src directory
+Create main.cpp in src directory
 
 `touch main.cpp`
 
-edit main.cpp
+Edit main.cpp
 
 `sudo nano main.cpp`
 
 <br />
 
-enter
+Enter
 
 ```
 #include "Arduino.h"
@@ -329,17 +327,17 @@ void loop()
 }
 ```
 
-back out to platformio_test directory<br />
+Save and back out to platformio_test directory<br />
 
 `cd -`<br />
 
-compile and upload <br />
+Compile and upload <br />
 
 `platformio run --target upload`<br />
 
 <br />
 
-platformio should upload, see led blink on teensy!
+Platformio should upload, see led blink on teensy!
 
 <br />
 
