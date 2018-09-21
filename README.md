@@ -1,22 +1,20 @@
 # Linobot New Install
 
+<pre>
 
-
-##### Starting Hardware Setup
+#### Starting Hardware Setup
 
 1 Using a 2.5A 5v micro usb power adapter
 
 2 Raspberry Pi 3B Model V1.2
 
-3 Hdmi cable to monitor
+3 Hdmi cable to monitor 
 
 
 
 After connected ubuntu mate to wifi, <u>remove hdmi cable</u> and use Windows computer, Putty SSH to Rpi.
 
 After Swapspace and Lino install, to test Platformio and teensy detection, connect <u>rpi to a teensy 3.2 by micro usb cable</u>.
-
-
 
 
 
@@ -58,6 +56,8 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md
 
 
 
+Extra:
+
 To find in wifi list name with KeywordInWifiName with command line
 
 `sudo wlan0 scan | grep KeywordInWifiName`		
@@ -66,7 +66,7 @@ To find in wifi list name with KeywordInWifiName with command line
 
 
 
-Installing Linobot on rpi as a robot computer 
+#### Installing Linobot on rpi as a robot computer 
 
 
 
@@ -341,5 +341,5 @@ compile and upload
 
 platformio should upload, see led blink on teensy!
 
-
+</pre>
 
