@@ -1,4 +1,4 @@
-# Linobot New Install
+# Linorobot Install to New RPI
 
 <br />
 
@@ -12,7 +12,7 @@
 
 <br />
 
-After connected ubuntu mate to wifi, <u>remove hdmi cable</u> and use Windows computer, Putty SSH to Rpi.
+After ubuntu mate is connected to wifi, <u>remove hdmi cable</u> and use Windows computer, Putty SSH to Rpi.
 
 After Swapspace and Lino install, to test Platformio and teensy detection, connect <u>rpi to a teensy 3.2 by micro usb cable</u>.
 
@@ -341,5 +341,12 @@ compile and upload <br />
 
 platformio should upload, see led blink on teensy!
 
+<br />
 
+##### Credits
 
+Credits to Linorobot and methylDragon for code and scripts!
+
+https://github.com/linorobot/linorobot
+
+https://github.com/methylDragon
