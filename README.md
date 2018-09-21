@@ -1,6 +1,6 @@
 # Linobot New Install
 
-&npsp;
+
 
 #### Starting Hardware Setup
 
@@ -10,21 +10,21 @@
 
 3 Hdmi cable to monitor 
 
-&npsp;
+
 
 After connected ubuntu mate to wifi, <u>remove hdmi cable</u> and use Windows computer, Putty SSH to Rpi.
 
 After Swapspace and Lino install, to test Platformio and teensy detection, connect <u>rpi to a teensy 3.2 by micro usb cable</u>.
 
-&npsp;
 
-&npsp;
+
+
 
 ##### Connecting ubuntu mate to wifi
 
 use Desktop, select wifi, enter password
 
-&npsp;
+
 
 ##### SSH
 
@@ -38,23 +38,23 @@ enable ssh in raspi-config
 
 reboot
 
-&npsp;
+
 
 enter ip address to putty at port 22 for ssh, registry key will be wrong, press OK
 
-&npsp;
+
 
 https://www.instructables.com/id/Use-ssh-to-talk-with-your-Raspberry-Pi/
 
 https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md
 
-&npsp;
+
 
  log in with username and password of RPI
 
-&npsp;
 
-&npsp;
+
+
 
 Extra:
 
@@ -62,43 +62,43 @@ To find in wifi list name with KeywordInWifiName with command line
 
 `sudo wlan0 scan | grep KeywordInWifiName`		
 
-&npsp;
 
-&npsp;
+
+
 
 #### Installing Linobot on rpi as a robot computer 
 
-&npsp;
+
 
 ##### guide to create swap space
 
 https://www.tecmint.com/create-a-linux-swap-file/
 
-&npsp;
+
 
 If swap space is not created, lino make will hang at 64-74%: https://groups.google.com/forum/#!topic/linorobot/dF8q4g4_4U4
 
-&npsp;
 
-&npsp;
+
+
 
 create 1.5gb of swap space for ros, 1610612736 from 1.5gb in bytes
 
 `sudo dd if=/dev/zero of=/mnt/swapfile bs=1024 count=1610612736`
 
-&npsp;
+
 
 make readable by only root user
 
 `sudo chmod 600 /mnt/swapfile`
 
-&npsp;
+
 
 setup file for swap space
 
 `sudo mkswap /mnt/swapfile`
 
-&npsp;
+
 
 edit /etc/fstab
 
@@ -108,7 +108,7 @@ enable swap file by adding this line in /etc/fstab
 
 `/mnt/swapfile swap swap defaults 0 0`
 
-&npsp;
+
 
 edit file to utilize memory
 
@@ -118,9 +118,9 @@ add following line to utilize swap file in memory
 
 `vm.swappiness=100`
 
-&npsp;
 
-&npsp;
+
+
 
 commands to check on swap space
 
@@ -130,13 +130,13 @@ commands to check on swap space
 
 `cat /proc/swaps`
 
-&npsp;
+
 
 ##### Install Git
 
 `sudo apt install git`
 
-&npsp;
+
 
 ##### Clone and install methylDragon quick install script
 
@@ -146,7 +146,7 @@ type in:
 
 `git clone https://github.com/methylDragon/quick-install-scripts.git`
 
-&npsp;
+
 
 go to directory 
 
@@ -160,7 +160,7 @@ run ros_lino_base_install
 
 `./ros_lino_base_install`
 
-&npsp;
+
 
 options while in install:
 
@@ -174,23 +174,23 @@ rplidar
 
 y
 
-&npsp;
 
-&npsp;
+
+
 
 turn off swap file to protect sd card
 
 https://github.com/MrChrisJ/fullnode/issues/20
 
-&npsp;
 
-&npsp;
+
+
 
 turn off swapfile
 
 `sudo swapoff -a`
 
-&npsp;
+
 
 edit file 
 
@@ -200,7 +200,7 @@ add # to comment out line
 
 `#vm.swappiness=100`
 
-&npsp;
+
 
 edit /etc/fstab
 
@@ -210,33 +210,33 @@ comment out this line in /etc/fstab
 
 `#/mnt/swapfile swap swap defaults 0 0`
 
-&npsp;
+
 
 remove swapfile
 
 `sudo rm /mnt/swapfile`
 
-&npsp;
+
 
 Reboot Rpi after removing swap space, swap space should be 0 after rebooting.
 
 `sudo reboot`
 
-&npsp;
 
- &npsp;
 
-&npsp;
+ 
+
+
 
 Hardware:
 
 Connect teensy 3.2 with micro usb cable to Rpi.
 
-&npsp;
+
 
 https://github.com/linorobot/linorobot/wiki/2.-Base-Controller
 
-&npsp;
+
 
 Test Teensy detection by Rpi and Platformio and by uploading code. 
 
@@ -244,23 +244,23 @@ Test Teensy detection by Rpi and Platformio and by uploading code.
 
 `platformio run --target upload`
 
-&npsp;
+#### 
 
-&npsp;
+
 
 ##### Extra:  Platformio to teensy 3.2 LED Blink test
 
-&npsp;
+
 
 This is to understand platformio a little better
 
 http://docs.platformio.org/en/latest/quickstart.html
 
-&npsp;
+
 
 On a windows computer, through Putty SSH to rpi
 
-&npsp;
+
 
 go home directory
 
@@ -272,17 +272,17 @@ create and go to new directory
 
 `cd platformio_test`
 
-&npsp;
+
 
 initialize platformio
 
 `platformio init --board teensy31`
 
-&npsp;
+
 
 lib, platformio.ini and src will be created
 
-&npsp;
+
 
 go to src directory
 
@@ -296,7 +296,7 @@ edit main.cpp
 
 `sudo nano main.cpp`
 
-&npsp;
+
 
 enter
 
@@ -337,7 +337,7 @@ compile and upload
 
 `platformio run --target upload`
 
-&npsp;
+
 
 platformio should upload, see led blink on teensy!
 
