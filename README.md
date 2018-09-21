@@ -329,15 +329,15 @@ void loop()
 }
 ```
 
-back out to platformio_test directory
+back out to platformio_test directory<br />
 
-`cd -`
+`cd -`<br />
 
-compile and upload
+compile and upload <br />
 
-`platformio run --target upload`
+`platformio run --target upload`<br />
 
-
+<br />
 
 platformio should upload, see led blink on teensy!
 
