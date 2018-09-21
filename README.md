@@ -38,6 +38,8 @@ enable ssh in raspi-config
 
 reboot
 
+`sudo reboot`
+
 <br />
 
 enter ip address to putty at port 22 for ssh, registry key will be wrong, press OK
